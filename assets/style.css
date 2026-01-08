@@ -461,4 +461,37 @@ header{
   }
 }
 
+/* ===== PHOTO WATERMARK ===== */
+.hero-photo{
+  position:relative; /* şart */
+}
+
+.photo-watermark{
+  position:absolute;
+  bottom:18px;
+  right:18px;
+
+  font-size:14px;
+  letter-spacing:3px;
+  font-weight:600;
+
+  color: rgba(255,18,54,.45); /* kırmızı ama hafif */
+  text-transform:uppercase;
+
+  pointer-events:none; /* tıklanamaz */
+  user-select:none;
+
+  mix-blend-mode:screen; /* sinematik karışım */
+  opacity:.6;
+}
+
+/* mobile daha da hafif */
+@media (max-width:900px){
+  .photo-watermark{
+    font-size:12px;
+    letter-spacing:2.5px;
+    opacity:.5;
+  }
+}
+
 
