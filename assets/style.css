@@ -231,17 +231,29 @@ footer{
   .two{grid-template-columns:1fr}
 }
 
+/* HERO IMAGE – FIXED SIZE & RESPONSIVE */
 .hero-image{
-  margin-top:20px;
-  border-radius:22px;
+  margin:24px auto 0;
+  max-width:720px;          /* DESKTOP sınırı */
+  border-radius:20px;
   overflow:hidden;
   border:1px solid rgba(255,255,255,.08);
-  box-shadow: 0 30px 80px rgba(0,0,0,.55);
+  box-shadow: 0 28px 70px rgba(0,0,0,.55);
 }
 
 .hero-image img{
   width:100%;
   height:auto;
   display:block;
-  object-fit:cover;
 }
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 768px){
+  .hero-image{
+    max-width:100%;
+    margin-top:18px;
+    border-radius:16px;
+  }
+}
+
+
