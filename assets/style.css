@@ -310,4 +310,155 @@ footer{
   }
 }
 
+/* ===== CINEMATIC BLACK/RED THEME OVERRIDE ===== */
+:root{
+  --bg:#050508;
+  --card:rgba(12,12,16,.78);
+  --text:#f3f3f6;
+  --muted:rgba(243,243,246,.68);
+  --line:rgba(255,255,255,.10);
+
+  --accent:#ff1236;     /* main red */
+  --accent2:#b3001f;    /* deep red */
+}
+
+/* background cinematic glow */
+body{
+  background:
+    radial-gradient(900px 520px at 18% 12%, rgba(255,18,54,.18), transparent 55%),
+    radial-gradient(700px 420px at 82% 22%, rgba(255,18,54,.10), transparent 55%),
+    radial-gradient(1100px 600px at 50% 100%, rgba(255,18,54,.08), transparent 60%),
+    linear-gradient(180deg, #040407 0%, #050508 100%);
+}
+
+/* header slightly darker */
+header{
+  background: rgba(5,5,8,.72);
+}
+
+/* brand + links */
+.brand{
+  letter-spacing:.6px;
+}
+.nav-links a.active{
+  color:var(--text);
+  border:1px solid rgba(255,18,54,.22);
+  background: rgba(255,18,54,.08);
+}
+
+/* buttons */
+.btn{
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+}
+.btn.primary{
+  border:1px solid rgba(255,18,54,.35);
+  background: linear-gradient(135deg, rgba(255,18,54,.22), rgba(179,0,31,.14));
+}
+.btn.primary:hover{
+  background: linear-gradient(135deg, rgba(255,18,54,.28), rgba(179,0,31,.18));
+}
+
+/* ===== CINEMATIC HERO SPLIT ===== */
+.hero-split{
+  position:relative;
+  padding:78px 0 62px;
+  gap:44px;
+}
+
+/* Red spotlight behind photo */
+.hero-split:before{
+  content:"";
+  position:absolute;
+  left:-120px;
+  top:20px;
+  width:560px;
+  height:560px;
+  background: radial-gradient(circle at 45% 40%, rgba(255,18,54,.25), transparent 62%);
+  filter: blur(2px);
+  pointer-events:none;
+}
+
+/* subtle grain overlay */
+.hero-split:after{
+  content:"";
+  position:absolute;
+  inset:-40px -20px -40px -20px;
+  background-image:
+    radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity:.05;
+  pointer-events:none;
+  mix-blend-mode: overlay;
+}
+
+/* photo cinematic frame */
+.hero-photo{
+  max-width:420px;  /* hard cap */
+}
+.hero-photo img{
+  border-radius:22px;
+  border:1px solid rgba(255,18,54,.22);
+  box-shadow:
+    0 38px 110px rgba(0,0,0,.72),
+    0 0 0 1px rgba(255,18,54,.12) inset;
+  filter: contrast(1.05) saturate(1.05);
+}
+
+/* text styling */
+.kicker{
+  border:1px solid rgba(255,18,54,.22);
+  background: rgba(255,18,54,.08);
+  color: rgba(255,255,255,.82);
+}
+.hero-text h1{
+  font-size:52px;
+  letter-spacing:-.8px;
+  margin:12px 0 12px;
+}
+.hero-text p{
+  font-size:16px;
+  max-width:560px;
+  color: var(--muted);
+}
+
+/* red underline accent for h1 (cinematic) */
+.hero-text h1:after{
+  content:"";
+  display:block;
+  width:86px;
+  height:3px;
+  margin-top:14px;
+  border-radius:999px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+/* small slogan line (optional) */
+.hero-tagline{
+  margin-top:14px;
+  color: rgba(255,255,255,.72);
+  font-size:13px;
+  letter-spacing:.35px;
+}
+
+/* mobile - keep cinematic, not huge */
+@media (max-width: 900px){
+  .hero-split{
+    padding:42px 0 34px;
+  }
+  .hero-split:before{
+    left:50%;
+    transform:translateX(-50%);
+    top:-40px;
+    width:520px;
+    height:520px;
+  }
+  .hero-photo{
+    max-width:290px;
+  }
+  .hero-text h1{
+    font-size:40px;
+  }
+}
+
 
